@@ -1,0 +1,85 @@
+﻿@model S3G1_PVFAPP.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    ViewBag.Active = "Products";
+}
+<div class="contactus">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="title">
+                    <h2>@ViewBag.Title @ViewBag.Active</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+
+<div class="container-fluid">
+    <div class="container-fluid padddd">
+
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 padddd"></div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 padddd">
+                <div>
+                    <div>
+                        <h4>Product</h4>
+                        <hr />
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ProductDescription)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ProductDescription)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ProductFinish)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ProductFinish)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ProductStandardPrice)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ProductStandardPrice)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ProductLine.ProductLineName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ProductLine.ProductLineName)
+                            </dd>
+
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <</div>
+
+    <button class="add-bt">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID })
+    </button>
+
+    <button class="add-bt">
+        @Html.ActionLink("Back to List", "Index")
+    </button>
+
+    <br />
+    <br />
+
+

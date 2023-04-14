@@ -1,0 +1,63 @@
+﻿@model IEnumerable<S3G1_PVFAPP.Models.Salesperson>
+
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Active = "SalesPerson";
+}
+
+<div class="contactus">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="title">
+                    <h2>Sales Persons</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Create New", "Create", "SalesPersons", null, new { @class = "add-bt" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SalespersonName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalespersonPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalespersonFax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Territory.TerritoryName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalespersonName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalespersonPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalespersonFax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Territory.TerritoryName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SalespersonID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SalespersonID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SalespersonID })
+            </td>
+        </tr>
+    }
+
+</table>

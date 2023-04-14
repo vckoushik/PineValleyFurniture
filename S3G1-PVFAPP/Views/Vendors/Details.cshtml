@@ -1,0 +1,71 @@
+﻿@model S3G1_PVFAPP.Models.Vendor
+
+@{
+    ViewBag.Title = "Details";
+    ViewBag.Active = "Vendors";
+
+}
+
+
+<div class="contactus">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="title">
+                    <h2>@ViewBag.Title @ViewBag.Active</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+<div class="container-fluid">
+    <div class="container-fluid padddd">
+
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 padddd"></div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 padddd">
+
+                <div>
+                    <h4>Vendor</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.VendorName)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.VendorName)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.VendorAddress)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.VendorAddress)
+                        </dd>
+
+
+                    </dl>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<button class="add-bt">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VendorID })
+</button>
+
+<button class="add-bt">
+    @Html.ActionLink("Back to List", "Index")
+</button>
+
+<br />
+<br />
+

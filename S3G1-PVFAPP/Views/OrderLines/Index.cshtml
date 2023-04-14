@@ -1,0 +1,55 @@
+﻿@model IEnumerable<S3G1_PVFAPP.Models.OrderLine>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="contactus">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="title">
+                    <h2>Order Line Items</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Create New", "Create", "OrderLines", null, new { @class = "add-bt" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderedQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Orders.OrderID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.ProductDescription)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderedQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Orders.OrderID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.ProductDescription)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit","OrderLines", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

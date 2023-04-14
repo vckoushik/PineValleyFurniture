@@ -1,0 +1,53 @@
+﻿@model IEnumerable<S3G1_PVFAPP.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Active = "Products";
+}
+
+
+<div class="contactus">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="title">
+                    <h2>Products</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Create New", "Create", "Products", null, new { @class = "add-bt" })
+</p>
+<div class="ourproduct">
+    <div class="container">
+        <div class="row product_style_3">
+            @{ int i = 0; }
+            <!-- product -->
+            @foreach (var item in Model)
+            {
+                 i+=1 ; 
+                var imageUrl = "../../Content/icon/p" + item.ProductID + ".png"; 
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                    <div class="full product">
+                        <div class="product_img" href="#">
+                            <div class="center">
+                                <img src=@imageUrl alt="#" />
+                                <div class="overlay_hover"> @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }, new { @class = "add-bt" }) |  @Html.ActionLink("Delete", "Delete", new { id = item.ProductID }, new { @class = "add-bt" })</div>
+                            </div>
+                        </div>
+                        <div class="product_detail text_align_center">
+                            <p class="product_price">$ @Html.DisplayFor(modelItem => item.ProductStandardPrice)</p>
+                            <p class="product_descr"><a href="Products/Details/@item.ProductID">@Html.DisplayFor(modelItem => item.ProductDescription)</a></p>
+                        </div>
+                    </div>
+                </div>
+            }
+            <!-- end product -->
+
+
+        </div>
+    </div>
+</div>

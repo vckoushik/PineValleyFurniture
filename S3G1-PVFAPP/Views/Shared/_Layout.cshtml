@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Pine Valley Furniture</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="../../Content/css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="../../Content/css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="../../Content/css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="../../Content/images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="../../Content/css/jquery.mCustomScrollbar.min.css">
+    
+    <link rel="icon" href="../../Content/images/sofa.png" type="image/gif" />
+
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <style>
+        table{
+           margin:10px;
+        }
+
+        #navLink {
+            color: black;
+            font-size: 17px;
+            line-height: 27px;
+            padding: 0px 15px;
+            text-transform: uppercase;
+        }
+
+            #navLink:hover {
+                color: #4eddd2;
+            }
+    </style>
+</head>
+<!-- body -->
+
+<body class="main-layout">
+
+    <!-- loader  -->
+    <div class="loader_bg">
+        <div class="loader"><img src="../../Content/images/loading.gif" alt="#" /></div>
+    </div>
+    <!-- end loader -->
+
+    <div class="wrapper">
+
+
+        <div class="sidebar">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+
+                <div id="dismiss">
+                    <i class="fa fa-arrow-left"></i>
+                </div>
+
+                <ul class="list-unstyled components">
+
+                    <li class="@(ViewBag.Active=="Home"? "active" : "")">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="@(ViewBag.Active=="About"? "active" : "")"> @Html.ActionLink("About", "About", "Home")</li>
+                    <li class="@(ViewBag.Active=="Products"? "active" : "")"> @Html.ActionLink("Products", "Index", "Products")</li>
+                    <li class="@(ViewBag.Active=="ProductLine"? "active" : "")"> @Html.ActionLink("Product Line", "Index", "ProductLines")</li>
+                    <li class="@(ViewBag.Active=="RawMaterial"? "active" : "")"> @Html.ActionLink("Raw Material", "Index", "RawMaterials")</li>
+                    <li class="@(ViewBag.Active=="Customers"? "active" : "")"> @Html.ActionLink("Customers", "Index", "Customers")</li>
+                    <li class="@(ViewBag.Active=="Orders"? "active" : "")"> @Html.ActionLink("Orders", "Index", "Orders")</li>
+                    <li class="@(ViewBag.Active=="Employees"? "active" : "")"> @Html.ActionLink("Employees", "Index", "Employees")</li>
+                    <li class="@(ViewBag.Active=="SalesPerson"? "active" : "")"> @Html.ActionLink("Sales Person", "Index", "SalesPersons")</li>
+                    <li class="@(ViewBag.Active=="SalesTerritory"? "active" : "")"> @Html.ActionLink("Supplies", "Index", "Supplies")</li>
+                    <li class="@(ViewBag.Active=="Skills"? "active" : "")"> @Html.ActionLink("Skills", "Index", "Skills")</li>
+                    <li class="@(ViewBag.Active=="Vendors"? "active" : "")"> @Html.ActionLink("Vendors", "Index", "Vendors")</li>
+                    <li class="@(ViewBag.Active=="WorkCenter"? "active" : "")"> @Html.ActionLink("Work Center", "Index", "WorkCenters")</li>
+                    <li class="@(ViewBag.Active=="DoesBusinessIn"? "active" : "")"> @Html.ActionLink("Does Business In", "Index", "DoesBusinessIns")</li>
+                    <li class="@(ViewBag.Active=="HasSkills"? "active" : "")"> @Html.ActionLink("Has SKills", "Index", "HasSkills")</li>
+                    <li class="@(ViewBag.Active=="ProducedIns"? "active" : "")"> @Html.ActionLink("Produced In", "Index", "ProducedIns")</li>
+                    <li class="@(ViewBag.Active=="Uses"? "active" : "")"> @Html.ActionLink("Uses", "Index", "Uses")</li>
+                    <li class="@(ViewBag.Active=="WorksIns"? "active" : "")"> @Html.ActionLink("Works In", "Index", "WorksIns")</li>
+                    <li class="@(ViewBag.Active=="Territories"? "active" : "")"> @Html.ActionLink("Territories", "Index", "Territories")</li>
+                </ul>
+
+            </nav>
+        </div>
+        <div id="content">
+            <!-- header -->
+            <header>
+                <!-- header inner -->
+                <div class="header">
+
+                    <div class="container-fluid">
+
+                        <div class="row">
+
+
+                            <div class="col-lg-1">
+                                <div class="right_header_info">
+                                    <ul>
+                                        <li>
+                                            <button type="button" id="sidebarCollapse">
+                                                <img src="../../Content/images/menu_icon.png" alt="#" />
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-8"></div>
+                                <div class="col-lg-3 logo_section">
+                                    <div class="full">
+                                        <div class="center-desk">
+                                            <div class="logo">
+                                                <a href="#"><img src="../../Content/images/logo.png" alt="#"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12"></div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+                                    <ul class="lik">
+                                        <li> @Html.ActionLink("Home", "Index", "Home", null, new { id = "navLink" })</li>
+                                        <li> @Html.ActionLink("About", "About", "Home", null, new { id = "navLink" })</li>
+                                        <li> @Html.ActionLink("Products", "Index", "Products", null, new { id = "navLink" })</li>
+                                        <li> @Html.ActionLink("Orders", "Index", "Orders", null, new { id = "navLink" })</li>
+                                        <li> @Html.ActionLink("Contact us", "Contact", "Home", null, new { id = "navLink" })</li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                        </div>
+                </div>
+
+                <!-- end header inner -->
+            </header>
+            <!-- end header -->
+            
+            @RenderBody()
+            
+            <!--  footer -->
+            <footer>
+                <div class="footer">
+                    <div class="container-fluid">
+                        <div class="border1">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                                    <h1 style="color:aliceblue;"><strong>Pine Valley Furniture</strong></h1>
+                                </div>
+
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+                                    <ul class="lik">
+                                        <li> @Html.ActionLink("Home", "Index", "Home")</li>
+                                        <li> @Html.ActionLink("About", "About", "Home")</li>
+                                        <li> @Html.ActionLink("Products", "Index", "Products")</li>
+                                        <li> @Html.ActionLink("Orders", "Index", "Orders")</li>
+                                        <li> @Html.ActionLink("Contact us", "Contact", "Home")</li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                                    <ul class="sociel">
+                                        <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                        <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                                        <li> <a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="new">
+                                    <h3>Pine Valley Furniture</h3>
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="newtt">
+                                    <p>
+                                        Pine Valley Furniture is a high-quality furniture retailer that offers a wide selection of elegant and durable pieces for the home and office. Their website is a virtual showroom that showcases their extensive collection of furniture, including bedroom sets, dining room tables, living room sofas, office desks, and more.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="copyright">
+                        <p>Copyright @DateTime.Now.Year All Right Reserved By <a href="#">Pine Valley Furniture</a></p>
+                    </div>
+
+                </div>
+
+            </footer>
+            <!-- end footer -->
+        </div>
+
+
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- Javascript files-->
+    <script src="../../Content/js/jquery.min.js"></script>
+    <script src="../../Content/js/popper.min.js"></script>
+    <script src="../../Content/js/bootstrap.bundle.min.js"></script>
+    <script src="../../Content/js/jquery-3.0.0.min.js"></script>
+    <!-- sidebar -->
+    <script src="../../Content/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../../Content/js/custom.js"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function() {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function() {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+
+        });
+    </script>
+   
+    
+</body>
+
+</html>

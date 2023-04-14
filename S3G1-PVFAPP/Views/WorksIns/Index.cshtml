@@ -1,0 +1,58 @@
+﻿@model IEnumerable<S3G1_PVFAPP.Models.WorksIn>
+
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Active = "WorkIns";
+}
+
+<div class="contactus">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="title">
+                    <h2>@ViewBag.Active</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Create New", "Create", "WorksIns", null, new { @class = "add-bt" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.EmployeeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkCenter.WorkCenterLocation)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.EmployeeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkCenter.WorkCenterLocation)
+            </td>
+            <td>
+                
+                @Html.ActionLink("Edit", "Edit", new { id = item.CreatedDate}) |
+                @Html.ActionLink("Details", "Details", new { id = item.CreatedDate }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CreatedDate })
+            </td>
+        </tr>
+    }
+
+</table>

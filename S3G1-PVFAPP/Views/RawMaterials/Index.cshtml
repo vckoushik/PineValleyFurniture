@@ -1,0 +1,57 @@
+﻿@model IEnumerable<S3G1_PVFAPP.Models.RawMaterial>
+
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Active = "RawMaterial";
+}
+
+<div class="contactus">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="title">
+                    <h2>Raw Materials</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Create New", "Create", "RawMaterials", null, new { @class = "add-bt" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaterialName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaterialStandardCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitOfMeasure)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaterialName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaterialStandardCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitOfMeasure)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaterialID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaterialID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaterialID })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<S3G1_PVFAPP.Models.Supplies>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="contactus">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="title">
+                    <h2>Supplies</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Create New", "Create", "Supplies", null, new { @class = "add-bt" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SuppliesUnitPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RawMaterial.MaterialName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vendor.VendorName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SuppliesUnitPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RawMaterial.MaterialName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vendor.VendorName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

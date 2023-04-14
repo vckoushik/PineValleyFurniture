@@ -1,0 +1,110 @@
+﻿@model S3G1_PVFAPP.Models.Orders
+
+@{
+    ViewBag.Title = "Details";
+    ViewBag.Active = "Orders";
+}
+
+
+<div class="contactus">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="title">
+                    <h2>@ViewBag.Title @ViewBag.Active</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+<div class="container-fluid">
+    <div class="container-fluid padddd">
+
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 padddd"></div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 padddd">
+
+                <div>
+                    <h1>Order#</h1>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.OrderID)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.OrderID)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.OrderDate)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.OrderDate)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Customer.CustomerName)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Customer.CustomerName)
+                        </dd>
+
+                    </dl>
+                    <h2>Order Line Items</h2>
+                    <table class="table">
+                        <tr>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.OrderLine.First().OrderedQuantity)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.OrderLine.First().OrderID)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.OrderLine.First().Product.ProductDescription)
+                            </th>
+                        </tr>
+                        
+                        @foreach (var item in Model.OrderLine)
+                        {
+                            <tr>
+                                
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OrderedQuantity)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Orders.OrderID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Product.ProductDescription)
+                                </td>
+
+                            </tr>
+                           
+                        }
+
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<button class="add-bt">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderID })
+</button>
+
+<button class="add-bt">
+    @Html.ActionLink("Back to List", "Index")
+</button>
+
+<br />
+<br />

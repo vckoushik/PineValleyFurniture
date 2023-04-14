@@ -1,0 +1,46 @@
+﻿@model IEnumerable<S3G1_PVFAPP.Models.Skill>
+
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Active = "Skills";
+}
+
+<div class="contactus">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="title">
+                    <h2>Skills</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Create New", "Create", "Skills", null, new { @class = "add-bt" }) &nbsp
+    @Html.ActionLink("Sort", "Index", "Skill", new { sort = 1 }, new { @class = "add-bt" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SkillDescription)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkillDescription)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SkillID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SkillID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SkillID })
+            </td>
+        </tr>
+    }
+
+</table>
