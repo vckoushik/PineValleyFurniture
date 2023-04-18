@@ -22,13 +22,13 @@ namespace S3G1_PVFAPP.Controllers
         }
 
         // GET: ProducedIns/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(string id1, string id2)
         {
-            if (id == null)
+            if (id1 == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProducedIn producedIn = db.ProducedIn.Find(id);
+            ProducedIn producedIn = db.ProducedIn.FirstOrDefault(u => (u.Product.ProductDescription == id1) && (u.WorkCenter.WorkCenterLocation == id2));
             if (producedIn == null)
             {
                 return HttpNotFound();
@@ -64,13 +64,13 @@ namespace S3G1_PVFAPP.Controllers
         }
 
         // GET: ProducedIns/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(string id1, string id2)
         {
-            if (id == null)
+            if (id1 == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProducedIn producedIn = db.ProducedIn.Find(id);
+            ProducedIn producedIn = db.ProducedIn.FirstOrDefault(u => (u.Product.ProductDescription == id1) && (u.WorkCenter.WorkCenterLocation == id2));
             if (producedIn == null)
             {
                 return HttpNotFound();
@@ -99,13 +99,13 @@ namespace S3G1_PVFAPP.Controllers
         }
 
         // GET: ProducedIns/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(string id1, string id2)
         {
-            if (id == null)
+            if (id1 == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProducedIn producedIn = db.ProducedIn.Find(id);
+            ProducedIn producedIn = db.ProducedIn.FirstOrDefault(u => (u.Product.ProductDescription == id1) && (u.WorkCenter.WorkCenterLocation == id2));
             if (producedIn == null)
             {
                 return HttpNotFound();

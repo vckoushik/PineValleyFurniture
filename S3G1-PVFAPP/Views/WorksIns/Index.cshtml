@@ -47,10 +47,10 @@
                 @Html.DisplayFor(modelItem => item.WorkCenter.WorkCenterLocation)
             </td>
             <td>
-                
-                @Html.ActionLink("Edit", "Edit", new { id = item.CreatedDate}) |
-                @Html.ActionLink("Details", "Details", new { id = item.CreatedDate }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.CreatedDate })
+               
+                @Html.ActionLink("Edit", "Edit", new { id1 =item.Employee.EmployeeName ,id2= item.WorkCenter.WorkCenterLocation }) |
+                @Html.ActionLink("Details", "Details", new { id1 = item.Employee.EmployeeName, id2 = item.WorkCenter.WorkCenterLocation }) |
+                @Html.ActionLink("Delete", "Delete", new { id1 = item.Employee.EmployeeName, id2 = item.WorkCenter.WorkCenterLocation })
             </td>
         </tr>
     }

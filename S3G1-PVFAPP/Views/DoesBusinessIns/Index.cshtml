@@ -47,9 +47,9 @@
                 @Html.DisplayFor(modelItem => item.Territory.TerritoryName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new { id1 = item.Customer.CustomerName, id2 = item.Territory.TerritoryName }) |
+                @Html.ActionLink("Details", "Details", new { id1 = item.Customer.CustomerName, id2 = item.Territory.TerritoryName }) |
+                @Html.ActionLink("Delete", "Delete", new { id1 = item.Customer.CustomerName, id2 = item.Territory.TerritoryName })
             </td>
         </tr>
     }

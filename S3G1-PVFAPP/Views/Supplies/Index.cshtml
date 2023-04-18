@@ -46,9 +46,9 @@
                 @Html.DisplayFor(modelItem => item.Vendor.VendorName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new { id1 = item.RawMaterial.MaterialName, id2 = item.Vendor.VendorName }) |
+                @Html.ActionLink("Details", "Details", new { id1 = item.RawMaterial.MaterialName, id2 = item.Vendor.VendorName }) |
+                @Html.ActionLink("Delete", "Delete", new { id1 = item.RawMaterial.MaterialName, id2 = item.Vendor.VendorName })
             </td>
         </tr>
     }

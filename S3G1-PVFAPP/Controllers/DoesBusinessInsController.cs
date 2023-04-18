@@ -22,13 +22,13 @@ namespace S3G1_PVFAPP.Controllers
         }
 
         // GET: DoesBusinessIns/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(string id1,string id2)
         {
-            if (id == null)
+            if (id1 == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DoesBusinessIn doesBusinessIn = db.DoesBusinessIn.Find(id);
+            DoesBusinessIn doesBusinessIn = db.DoesBusinessIn.FirstOrDefault(u => (u.Customer.CustomerName == id1) && (u.Territory.TerritoryName == id2));
             if (doesBusinessIn == null)
             {
                 return HttpNotFound();
@@ -64,13 +64,13 @@ namespace S3G1_PVFAPP.Controllers
         }
 
         // GET: DoesBusinessIns/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(string id1,string id2)
         {
-            if (id == null)
+            if (id1 == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DoesBusinessIn doesBusinessIn = db.DoesBusinessIn.Find(id);
+            DoesBusinessIn doesBusinessIn = db.DoesBusinessIn.FirstOrDefault(u => (u.Customer.CustomerName == id1) && (u.Territory.TerritoryName == id2));
             if (doesBusinessIn == null)
             {
                 return HttpNotFound();
@@ -99,13 +99,13 @@ namespace S3G1_PVFAPP.Controllers
         }
 
         // GET: DoesBusinessIns/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(string id1, string id2)
         {
-            if (id == null)
+            if (id1 == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DoesBusinessIn doesBusinessIn = db.DoesBusinessIn.Find(id);
+            DoesBusinessIn doesBusinessIn = db.DoesBusinessIn.FirstOrDefault(u => (u.Customer.CustomerName == id1) && (u.Territory.TerritoryName == id2));
             if (doesBusinessIn == null)
             {
                 return HttpNotFound();

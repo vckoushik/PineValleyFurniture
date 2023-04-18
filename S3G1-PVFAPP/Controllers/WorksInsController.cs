@@ -24,13 +24,14 @@ namespace S3G1_PVFAPP.Controllers
         }
 
         // GET: WorksIns/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(string id1, string id2)
         {
-            if (id == null)
+            if (id1 == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WorksIn worksIn = db.WorksIn.Find(id);
+            WorksIn worksIn = db.WorksIn.FirstOrDefault(u => (u.Employee.EmployeeName == id1) && (u.WorkCenter.WorkCenterLocation == id2));
+            //WorksIn worksIn = db.WorksIn.Find(id);
             if (worksIn == null)
             {
                 return HttpNotFound();
@@ -66,14 +67,13 @@ namespace S3G1_PVFAPP.Controllers
         }
 
         // GET: WorksIns/Edit/5
-        public ActionResult Edit(byte[] id)
+        public ActionResult Edit(string id1,string id2)
         {
-            String id1 = Encoding.ASCII.GetString(id);
-            if (id == null)
+            if (id1 == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WorksIn worksIn = db.WorksIn.Find(id1);
+            WorksIn worksIn = db.WorksIn.FirstOrDefault(u => (u.Employee.EmployeeName == id1) && (u.WorkCenter.WorkCenterLocation == id2));
             if (worksIn == null)
             {
                 return HttpNotFound();
@@ -102,13 +102,13 @@ namespace S3G1_PVFAPP.Controllers
         }
 
         // GET: WorksIns/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(string id1,string id2)
         {
-            if (id == null)
+            if (id1 == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WorksIn worksIn = db.WorksIn.Find(id);
+            WorksIn worksIn = db.WorksIn.FirstOrDefault(u => (u.Employee.EmployeeName == id1) && (u.WorkCenter.WorkCenterLocation == id2));
             if (worksIn == null)
             {
                 return HttpNotFound();

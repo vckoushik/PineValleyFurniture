@@ -22,13 +22,13 @@ namespace S3G1_PVFAPP.Controllers
         }
 
         // GET: HasSkills/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(string id1,string id2)
         {
-            if (id == null)
+            if (id1 == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HasSkills hasSkills = db.HasSkills.Find(id);
+            HasSkills hasSkills = db.HasSkills.FirstOrDefault(u => (u.Employee.EmployeeName == id1) && (u.Skill.SkillDescription == id2));
             if (hasSkills == null)
             {
                 return HttpNotFound();
@@ -64,13 +64,13 @@ namespace S3G1_PVFAPP.Controllers
         }
 
         // GET: HasSkills/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(string id1, string id2)
         {
-            if (id == null)
+            if (id1 == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HasSkills hasSkills = db.HasSkills.Find(id);
+            HasSkills hasSkills = db.HasSkills.FirstOrDefault(u => (u.Employee.EmployeeName == id1) && (u.Skill.SkillDescription == id2));
             if (hasSkills == null)
             {
                 return HttpNotFound();
@@ -99,13 +99,13 @@ namespace S3G1_PVFAPP.Controllers
         }
 
         // GET: HasSkills/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(string id1, string id2)
         {
-            if (id == null)
+            if (id1 == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HasSkills hasSkills = db.HasSkills.Find(id);
+            HasSkills hasSkills = db.HasSkills.FirstOrDefault(u => (u.Employee.EmployeeName == id1) && (u.Skill.SkillDescription == id2));
             if (hasSkills == null)
             {
                 return HttpNotFound();

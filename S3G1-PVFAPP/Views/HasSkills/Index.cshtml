@@ -47,9 +47,9 @@
                 @Html.DisplayFor(modelItem => item.Skill.SkillDescription)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new { id1 = item.Employee.EmployeeName, id2 = item.Skill.SkillDescription }) |
+                @Html.ActionLink("Details", "Details", new { id1 = item.Employee.EmployeeName, id2 = item.Skill.SkillDescription }) |
+                @Html.ActionLink("Delete", "Delete", new { id1 = item.Employee.EmployeeName, id2 = item.Skill.SkillDescription })
             </td>
         </tr>
     }

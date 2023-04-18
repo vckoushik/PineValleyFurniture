@@ -22,13 +22,13 @@ namespace S3G1_PVFAPP.Controllers
         }
 
         // GET: Supplies/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(string id1, string id2)
         {
-            if (id == null)
+            if (id1 == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Supplies supplies = db.Supplies.Find(id);
+            Supplies supplies = db.Supplies.FirstOrDefault(u => (u.RawMaterial.MaterialName == id1) && (u.Vendor.VendorName == id2));
             if (supplies == null)
             {
                 return HttpNotFound();
@@ -64,13 +64,13 @@ namespace S3G1_PVFAPP.Controllers
         }
 
         // GET: Supplies/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(string id1, string id2)
         {
-            if (id == null)
+            if (id1 == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Supplies supplies = db.Supplies.Find(id);
+            Supplies supplies = db.Supplies.FirstOrDefault(u => (u.RawMaterial.MaterialName == id1) && (u.Vendor.VendorName == id2));
             if (supplies == null)
             {
                 return HttpNotFound();
@@ -99,13 +99,13 @@ namespace S3G1_PVFAPP.Controllers
         }
 
         // GET: Supplies/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(string id1, string id2)
         {
-            if (id == null)
+            if (id1 == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Supplies supplies = db.Supplies.Find(id);
+            Supplies supplies = db.Supplies.FirstOrDefault(u => (u.RawMaterial.MaterialName == id1) && (u.Vendor.VendorName == id2));
             if (supplies == null)
             {
                 return HttpNotFound();
